@@ -1,0 +1,49 @@
+/* src/Sidebar.css */
+.sidebar {
+    width: 100px;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .directory {
+    width: 60px;
+    height: 5px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .directory .folder-icon {
+    font-size: 24px;
+  }
+  
+  .directory:hover,
+  .directory.active {
+    transform: scale(1.5);
+    z-index: 10;
+    height: 60px;
+  }
+
+  .directory:hover + .directory{
+    transform: scale(1);
+    z-index: 9;
+    height: 40px;
+  }
+  
+  .directory:has(+ .directory:hover){
+    transform: scale(1);
+    z-index: 9;
+    height: 40px;
+  }
+  
